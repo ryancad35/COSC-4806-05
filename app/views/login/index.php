@@ -27,7 +27,7 @@
 				<label for="password">Password</label>
 				<input required type="password" class="form-control" id="password" name="password">
 			</div>
-			<button type="submit" class="btn">Login</button>
+			<button type="submit" class="btn btn-primary">Login</button><br><br>
 		</fieldset>
 	</form>
 	<p>Don't have an account? <a href="/create">Create one here</a></p>

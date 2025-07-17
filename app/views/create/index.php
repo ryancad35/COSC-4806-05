@@ -38,7 +38,7 @@
                     <input required type="password" class="form-control" name="password">
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary" name="action" value="Submit Registration">Create Account</button>
+                <button type="submit" class="btn btn-primary" name="action" value="Submit Registration">Create Account</button><br><br>
             </fieldset>
             </form> 
             <p>Already have an account? <a href="/login">Login here</a></p>
