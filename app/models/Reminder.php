@@ -47,6 +47,20 @@ class Reminder {
       return $rows;
     }
 
+    public function get_most_reminders_by_user() {
+      $db = db_connect();
+      $statement = $db->prepare("
+        SELECT u.username, COUNT(r.id) as reminder_count 
+        FROM users u 
+        LEFT JOIN reminders r ON u.id = r.user_id 
+        GROUP BY u.id, u.username 
+        ORDER BY reminder_count DESC
+      ");
+      $statement->execute();
+      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+      return $rows;
+    }
+
     public function edit_reminder($subject, $id) {
       $db = db_connect();
       $query = 'UPDATE reminders SET subject= :subject WHERE id = :id';
