@@ -28,7 +28,9 @@ class Reminder {
 
     public function get_all_reminders() {
       $db = db_connect();
-      $statement = $db->prepare("select * from reminders;");
+      $statement = $db->prepare("
+      select * from reminders
+      ORDER BY created_at DESC;");
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $rows;
