@@ -1,5 +1,17 @@
 <footer class="footer">    
-    <p>Copyright &copy; <?php echo date('Y'); ?> </p>
+    <div class="container text-center">
+        <div class="social-icons">
+            <a href="https://github.com/ryancad35" target="_blank" class="text-decoration-none me-3">
+                <i class="bi bi-github" style="font-size: 1.5rem; color: #333;"></i>
+            </a>
+            <a href="https://x.com/ryancad_" target="_blank" class="text-decoration-none me-3">
+                <i class="bi bi-twitter-x" style="font-size: 1.5rem; color: #333;"></i>
+            </a>
+            <a href="mailto:rylachapelle@algomau.ca" class="text-decoration-none">
+                <i class="bi bi-envelope" style="font-size: 1.5rem; color: #333;"></i>
+            </a>
+        </div>
+    </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -10,7 +22,6 @@ function showToast(title, message, type = 'success') {
     const toastTitle = document.getElementById('toastTitle');
     const toastMessage = document.getElementById('toastMessage');
 
-    // Set content
     toastTitle.textContent = title;
     toastMessage.textContent = message;
 
