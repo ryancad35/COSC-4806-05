@@ -28,7 +28,7 @@
             <legend>Enter Your Reminder</legend>
             <textarea maxlength="255" name="message" id="message"><?php echo $reminder['subject']; ?></textarea><br>
             <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <input type="submit" name="action" value="Edit Reminder">
+            <input type="submit" name="action" class="btn btn-primary" value="Edit Reminder">
         </fieldset>
     </form>
     <br>
