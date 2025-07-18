@@ -28,7 +28,7 @@
             <div class="form-group">
                 <textarea maxlength="255" name="message" id="message" class="form-control"></textarea>
             </div>
-            <input type="submit" name="action" value="Submit Reminder" class="btn">
+            <input type="submit" name="action" class="btn btn-primary" value="Submit Reminder" class="btn">
         </fieldset>
     </form>
 </div>
