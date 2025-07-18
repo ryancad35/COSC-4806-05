@@ -1,8 +1,10 @@
 <?php
 
-class Reminders extends Controller {
+class Reports extends Controller {
 
     public function __construct() {
+
+        // echo 'Username: ' . ($_SESSION['username'] ?? 'not set'); exit;
         // If user is not logged in, redirect to login page
         if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
             header('Location: /login');
