@@ -1,31 +1,23 @@
 <?php require_once 'app/views/templates/headerPublic.php'?>
 <main role="main" class="container">
+    <?php if (!empty($success)): ?>
+        <p><?php echo $success; ?></p>
+    <?php endif; ?>
+    <?php if (!empty($error)): ?>
+        <p><?php echo htmlspecialchars($error); ?></p>
+    <?php endif; ?>
+    
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-12">
-                <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/login">Login</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><?= ucwords($_SESSION['controller']);?></li>
-          </ol>
-        </nav>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
                 <h1>Create an Account</h1>
+                <p class="lead">Create your account below.</p>
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-auto">
-            <?php if (!empty($success)): ?>
-                <p><?php echo $success; ?></p>
-            <?php endif; ?>
-            <?php if (!empty($error)): ?>
-                <p><?php echo htmlspecialchars($error); ?></p>
-            <?php endif; ?>
 
             <form action="/create" method="post" >
             <fieldset>
@@ -37,7 +29,6 @@
                     <label for="password">Password</label>
                     <input required type="password" class="form-control" name="password">
                 </div>
-                <br>
                 <button type="submit" class="btn btn-primary" name="action" value="Submit Registration">Create Account</button><br><br>
             </fieldset>
             </form> 
