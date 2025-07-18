@@ -89,8 +89,10 @@ class Reminder {
       foreach ($reminders as $row) {
         $subject = htmlspecialchars($row['subject']);
         $created_at = htmlspecialchars($row['created_at']);
+        $username = htmlspecialchars($row['username']);
         $id = $row['id'];
-  
+
+        $remindersList .= "<p><strong>User:</strong> $username</p>";
         $remindersList .= "<p><strong>Reminder:</strong> $subject</p>";
         $remindersList .= "<p><b>Created on:</b> $created_at</p>";
         $remindersList .= "<p>
