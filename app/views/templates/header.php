@@ -16,12 +16,14 @@ if (!isset($_SESSION['auth'])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/home">COSC 4806</a>
+      <a class="navbar-brand d-flex align-items-center" href="/home"> 
+        <img src="/profile_pic.jpg" alt="Profile" class="rounded-circle me-2" style="width: 40px; height: 40px; border: 2px solid white;">
+        COSC 4806
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,13 +33,19 @@ if (!isset($_SESSION['auth'])) {
             <a class="nav-link" href="/home">Home</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/about">About Me</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/reminders">Reminders</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/reminders/create">Create Reminder</a>
+          </li>
           <?php if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin'): ?>
-            <li class="nav-item">
-              <a class="nav-link" href="/reports">Reports</a>
-            </li>
-            <?php endif; ?>
+          <li class="nav-item">
+            <a class="nav-link" href="/reports">Reports</a>
+          </li>
+          <?php endif; ?>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Account
