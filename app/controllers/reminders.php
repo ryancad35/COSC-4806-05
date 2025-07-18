@@ -33,6 +33,12 @@ class Reminders extends Controller {
             if (!empty($message)) {
                 $reminder = $this->model('Reminder');
                 $reminder->add_reminder($message);
+
+                // Set toast message
+                $_SESSION['toast_title'] = 'Success!';
+                $_SESSION['toast_message'] = 'Reminder created successfully!';
+                $_SESSION['toast_type'] = 'success';
+
                 header('Location: /reminders');
                 exit;
             } else {
@@ -53,6 +59,12 @@ class Reminders extends Controller {
             if (!empty($message)) {
                 $reminder = $this->model('Reminder');
                 $reminder->edit_reminder($message, $id);
+
+                // Set toast message
+                $_SESSION['toast_title'] = 'Success!';
+                $_SESSION['toast_message'] = 'Reminder updated successfully!';
+                $_SESSION['toast_type'] = 'success';
+
                 header('Location: /reminders');
                 exit;
             } else {
@@ -85,9 +97,15 @@ class Reminders extends Controller {
     public function delete($id) {
         $reminder = $this->model('Reminder');
         $reminder->delete_reminder($id);
+
+        // Set toast message
+        $_SESSION['toast_title'] = 'Deleted!';
+        $_SESSION['toast_message'] = 'Reminder deleted successfully!';
+        $_SESSION['toast_type'] = 'success';
+
         header('Location: /reminders');
         exit;
     }
 
-    
+
 }

@@ -16,23 +16,28 @@ html, body {
 body {
     position: relative;
     min-height: 100vh;
+    padding-bottom: 70px; /* Space for footer */
 }
 
 main, .container {
     padding: 20px 0;
-    padding-bottom: 80px; /* Space for footer */
+    padding-bottom: 100px; /* Extra space to prevent content hiding behind footer */
 }
 
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 10px 0;
+    height: 50px;
+    padding: 15px 0;
     text-align: center;
     border-top: 1px solid #ddd;
     color: #666;
     background: #f8f9fa;
+    z-index: 1000;
+    box-sizing: border-box;
+    line-height: 1;
 }
 
 /* Container */
