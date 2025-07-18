@@ -96,4 +96,19 @@ class User {
         $stmt->bindValue(':attempt', $status, PDO::PARAM_STR);
         $stmt->execute();
     }
+
+    public function get_login_counts() {
+        $db = db_connect();
+        $sql = "
+            SELECT attempted_username as username, COUNT(*) as login_count
+            FROM login_logs 
+            WHERE attempt = 'good'
+            GROUP BY attempted_username
+            ORDER BY login_count DESC
+        ";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $rows;
+    }
 }
