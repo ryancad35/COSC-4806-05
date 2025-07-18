@@ -31,14 +31,13 @@ if (!isset($_SESSION['auth'])) {
             <a class="nav-link" href="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about">About Me</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/reminders">Reminders</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/reminders/create">Create Reminder</a>
-          </li>
+          <?php if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin'): ?>
+            <li class="nav-item">
+              <a class="nav-link" href="/reports">Reports</a>
+            </li>
+            <?php endif; ?>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Account
