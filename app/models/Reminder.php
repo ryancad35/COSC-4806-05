@@ -7,9 +7,10 @@ class Reminder {
 
     public function add_reminder($subject) {
         $db = db_connect();
-        $query = 'INSERT INTO reminders (subject) VALUES (:subject)';
+      $query = 'INSERT INTO reminders (subject, user_id) VALUES (:subject, :user_id)';
         $statement = $db->prepare($query);
         $statement->bindValue(':subject', $subject);
+        $statement->bindValue(':user_id', $_SESSION['user_id']);
         $statement->execute();
     }
 
@@ -28,6 +29,19 @@ class Reminder {
     public function get_all_reminders() {
       $db = db_connect();
       $statement = $db->prepare("select * from reminders;");
+      $statement->execute();
+      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+      return $rows;
+    }
+
+    public function get_all_reminders_with_users() {
+      $db = db_connect();
+      $statement = $db->prepare("
+        SELECT r.*, u.username 
+        FROM reminders r 
+        JOIN users u ON r.user_id = u.id 
+        ORDER BY r.created_at DESC
+      ");
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $rows;
