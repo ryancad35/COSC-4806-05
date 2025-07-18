@@ -21,11 +21,11 @@ body {
 
 main {
     padding: 20px 0;
-    padding-bottom: 100px; 
+    padding-bottom: 50px; 
 }
 
 .container {
-    padding-bottom: 100px !important; /* Override Bootstrap padding */
+    padding-bottom: 50px !important; /* Override Bootstrap padding */
 }
 
 .footer {
